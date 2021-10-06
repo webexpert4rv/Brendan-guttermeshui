@@ -1,0 +1,1283 @@
+<!-- firstpage -->
+<app-navbar></app-navbar>
+
+<div style="margin-top:200px;" *ngIf="firstPage">
+  <form id="form1" class="mt-5">
+    <div class="container-fluid mr-auto bg-gray">
+      <div class="container m-auto">
+        <img src="/assets/img/step1.png" alt="step1" class="img-fluid bg-class">
+      </div>
+    </div>
+    <div class="container-fluid tab-pane">
+      <div class="row">
+        <div class="col-sm-10 col-lg-8 offset-sm-1 offset-lg-2 quote">
+          <p>Let's start by getting your details, <br> so you can revert back to your quote anytime.</p>
+        </div>
+
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #f8f8f8; padding: 15px 75px;">
+          <div id="wizard_container">
+            <input id="website" name="website" type="text" value="" />
+            <div id="middle-wizard">
+              <div class="step">
+
+                <h3 class="main_question">Personal Details</h3>
+
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="senData.name" name="name" class="form-control"
+                    placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <input type="number" [(ngModel)]="senData.phone" name="phone" class="form-control"
+                    placeholder="Your Phone">
+                </div>
+                <div class="form-group">
+                  <input type="email" [(ngModel)]="senData.email" name="email" class="form-control"
+                    placeholder="Your Email">
+                </div>
+                <h3 class="main_question">Delivery Address</h3>
+
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="senData.street" name="street" class="form-control"
+                    placeholder="Your Street Number and Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="senData.suburb" name="suburb" class="form-control"
+                    placeholder="Your Suburb">
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="senData.state" name="state" class="form-control"
+                    placeholder="Your State">
+                </div>
+                <div class="form-group">
+                  <input type="number" [(ngModel)]="senData.postalCode" name="postalCode" class="form-control"
+                    placeholder="Your Postal code">
+                </div>
+
+
+                <div class="form-group">
+                  <button type="button" (click)="sumbitFirstPage()" name="forward" Style="background-color:#184876;"
+                    class=" btn btn-primary">
+                    Submit </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- second page -->
+<div style="margin-top:200px;" *ngIf="secondPage">
+  <div class="container-fluid mr-auto bg-gray">
+    <div class="container m-auto">
+      <img src="/assets/img/step1.png" alt="step1" class="img-fluid bg-class">
+    </div>
+  </div>
+  <form id="form1" class="">
+    <div class="container-fluid tab-pane">
+      <div class="row mt-4">
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #f8f8f8; padding: 15px 75px;">
+          <div id="wizard_container">
+            <input id="website" name="website" type="text" value="" />
+            <div id="middle-wizard">
+              <div class="step">
+
+                <h3 class="main_question">Personal Details</h3>
+
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="senData.name" name="name" class="form-control"
+                    placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <input type="number" [(ngModel)]="senData.phone" name="phone" class="form-control"
+                    placeholder="Your Phone">
+                </div>
+                <div class="form-group">
+                  <input type="email" [(ngModel)]="senData.email" name="email" class="form-control"
+                    placeholder="Your Email">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /col -->
+      </div>
+    </div>
+  </form>
+  <form id="form1">
+    <!-- 21 -->
+    <div *ngIf="secondPage1" class="container-fluid tab-pane">
+      <div class="row">
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #ec8f21;; padding: 15px 75px;">
+          <h3 style="font-size:32px;" class="main_question">Online Quote Form</h3>
+        </div>
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #f8f8f8; padding: 15px 75px;">
+
+          <div id="wizard_container_radio">
+            <input id="website" name="website" type="text" value="" />
+            <div id="middle-wizard">
+
+              <div class="step">
+
+                <!-- <h3 class="main_question">Create New Order</h3> -->
+
+                <label>What are your requirements for our Guttermesh?</label>
+                <div class="row">
+
+                  <div class="burmanRadio form-group col-12 col-xl-4">
+                    <input [(ngModel)]="senData.type" type="radio" value="1" class="burmanRadio__input" id="radio-1"
+                      name="type">
+                    <label for="radio-1" class="burmanRadio__label">DIY Kit</label>
+                    <p>Kit includes Mesh, Trims, Screws (and Saddles for Orb, TrimDek and Kliplok roof)</p>
+                  </div>
+
+                  <div class="burmanRadio form-group col-12 col-xl-4">
+                    <input [(ngModel)]="senData.type" type="radio" value="2" class="burmanRadio__input" id="radio-2"
+                      name="type">
+                    <label for="radio-2" class="burmanRadio__label">Kit + Install</label>
+                    <p>Kit includes Mesh, Trims, Saddles and Screws</p>
+                  </div>
+
+                  <div class="burmanRadio form-group col-12 col-xl-4">
+                    <input (click)="partsOnly()" [(ngModel)]="senData.type" type="radio" value="3"
+                      class="burmanRadio__input" id="radio-3" name="type">
+                    <label for="radio-3" class="burmanRadio__label"> Parts only</label>
+                  </div>
+                </div>
+                <div *ngIf = "senData.type == '2'"> 
+                <label>Select Your Installer</label>
+                <div class="row mb-4">
+                  <div class="col-md-6 col-xs-12">
+                      <select [(ngModel)]="senData.installerId"  name="installerId" (change) = "guttermeshinstaler()">
+                          <option value="">Select Installers</option>
+                          <option *ngFor = "let item of installers" value = {{item.installerId._id}}>{{item.installerId.businessName}}</option>
+                          <option value = "0">Gutter Mesh Direct Preferred Installer</option>
+                      </select>
+                    </div>
+
+                </div>
+                </div>
+
+                <div *ngIf = "senData.type == '2'">
+                  <label>Is the building Multiple Storeys?</label>
+                  <div class="row">
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input  [(ngModel)]="senData.building" name="building" type="radio" value="1"
+                        class="burmanRadio__input" id="buildingy">
+                      <label for="buildingy" class="burmanRadio__label">Yes</label>
+                    </div>
+
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input [(ngModel)]="senData.building" name="building" type="radio" value="2"
+                        class="burmanRadio__input" id="buildingn">
+                      <label for="buildingn" class="burmanRadio__label">No</label>
+                    </div>
+                  </div>
+                </div>
+
+                <label>What type of roof you have?</label>
+                <div class="row">
+                  <div class="burmanRadio radio_questions form-group col-6 col-xl-4">
+                    <input (click)="nonkliplok()" [(ngModel)]="senData.product" name="product" type="radio" value="1"
+                      class="burmanRadio__input" id="custom">
+                    <label for="custom" class="burmanRadio__label">
+
+                      <img class="img-fluid" src="assets/img/custom-orb2.png" style="width:100%; height:auto;" />
+                      <span class="textsmall">Also Known As "Corro" or "Corrogated" or "Corrodek"</span>
+                    </label>
+                  </div>
+                  <div class="burmanRadio radio_questions form-group col-6 col-xl-4">
+                    <input (click)="nonkliplok()" [(ngModel)]="senData.product" name="product" type="radio" value="2"
+                      class="burmanRadio__input" id="tile1">
+                    <label for="tile1" class="burmanRadio__label">
+
+                      <img class="img-fluid" src="assets/img/tile1.png" style="width:100%; height:auto;" />
+                      <span style="visibility: hidden;" class="textsmall">Also Known As "Corro" or "Corrogated" or
+                        "Corrodek"</span>
+
+                    </label>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="burmanRadio radio_questions form-group col-6 col-xl-4">
+                    <input (click)="nonkliplok()" [(ngModel)]="senData.product" name="product" type="radio" value="3"
+                      type="radio" class="burmanRadio__input" id="trim">
+                    <label for="trim" class="burmanRadio__label">
+
+                      <img class="img-fluid" src="assets/img/trimdek1.png" style="width:100%; height:auto;" />
+                      <span style="visibility: hidden;" class="textsmall">Also Known As "Corro" or "Corrogated" or
+                        "Corrodek"</span>
+
+                    </label>
+                  </div>
+                  <div class="burmanRadio radio_questions form-group col-6 col-xl-4">
+                    <input (click)="kliplok()" [(ngModel)]="senData.product" name="product" type="radio" value="4"
+                      type="radio" class="burmanRadio__input" id="klip">
+                    <label for="klip" class="burmanRadio__label">
+
+                      <img class="img-fluid" src="assets/img/Klip-Lok1.png" style="width:100%; height:auto;" />
+                      <span class="textsmall">Also Known As "Lokdek"</span>
+                      <span style="visibility: hidden;" class="textsmall">Also Known As "Lokdek"</span>
+
+
+                    </label>
+                  </div>
+
+                </div>
+
+
+                <label>What type of Gutter Mesh is require?</label> <span> <button type="button" href="#myModal"
+                    role="button" class="qunmark" data-toggle="modal"> ? </button></span>
+                <div class="row">
+
+                  <div class="burmanRadio form-group col-md-4 col-xl-4">
+                    <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="1"
+                      class="burmanRadio__input" id="alumesh">
+                    <label for="alumesh" class="burmanRadio__label">
+                      <div style="color:#184876;"><img style="height: 45px !important;" src="assets/img/AlMesh.png"
+                          class="img-fluid">
+                        <p class="font-gray">(Aluminium 3.5mm Mesh)
+                          Best for Bushfire Areas
+                        </p>
+                        <img src="assets/img/15years.png" class="img-fluid">
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="burmanRadio form-group col-md-4 col-xl-4">
+                    <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="2"
+                      class="burmanRadio__input" id="embermesh">
+                    <label for="embermesh" class="burmanRadio__label">
+                      <div style="color:#184876;"><img src="assets/img/ember-mesh.png" class="img-fluid">
+                        <p style="margin-bottom:18px;" class="font-gray">(Aluminium 2.0mm Mesh)
+                          Best for Bushfire Areas
+                        </p>
+                        <img src="assets/img/15years.png" class="img-fluid">
+                      </div>
+
+                    </label>
+                  </div>
+
+                  <div class="burmanRadio form-group col-md-4 col-xl-4">
+                    <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="3"
+                      class="burmanRadio__input" id="plasmesh">
+                    <label for="plasmesh" class="burmanRadio__label">
+                      <div style="color:#184876;"><img src="assets/img/plas-mesh.png" class="img-fluid">
+                        <p class="font-gray">(HDPE Plastic 4.0mm Mesh) </p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <!-- <div class="row">
+                  <div class="form-group radio_questions col-12 col-xl-4" style="padding-left:0px; padding-right:0px;">
+                    <label class="newlogo">
+                      <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="1"
+                        class="icheck required" />
+                      <div style="color:#184876;margin-left: 30px;"><img src="assets/img/AlMesh.png" class="img-fluid">
+                        <p class="font-gray">(Aluminium 3.5mm Mesh) Best for Bushfire Areas </p>
+                        <img src="assets/img/15years.png" class="img-fluid">
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-group radio_questions col-12 col-xl-4" style="padding-left:0px; padding-right:0px;">
+                    <label class="newlogo">
+                      <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="2"
+                        class="icheck required" />
+                      <div style="color:#184876;margin-left: 30px;"><img src="assets/img/ember-mesh.png"
+                          class="img-fluid">
+                        <p class="font-gray">(Aluminium 2.0mm Mesh) Best for Bushfire Areas </p>
+                        <img src="assets/img/15years.png" class="img-fluid">
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-group radio_questions col-12 col-xl-4" style="padding-left:0px; padding-right:0px;">
+                    <label class="newlogo">
+                      <input [(ngModel)]="senData.subproduct" name="subproduct" type="radio" value="3"
+                        class="icheck required" />
+                      <div style="color:#184876;margin-left: 30px;"><img src="assets/img/plas-mesh.png"
+                          class="img-fluid">
+                        <p class="font-gray">(HDPE Plastic 4.0mm Mesh) </p>
+                      </div>
+                    </label>
+                  </div>
+                </div> -->
+                <div *ngIf="protectionArea">
+                  <label>Which areas need Gutter Protection?</label>
+
+
+
+                  <div class="row">
+
+
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input (click)="protection('1')" [(ngModel)]="senData.area" name="area" type="radio" value="1"
+                        class="burmanRadio__input" id="gutter">
+                      <label for="gutter" class="burmanRadio__label">Gutter Only</label>
+                    </div>
+
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input (click)="protection('2')" [(ngModel)]="senData.area" name="area" type="radio" value="2"
+                        class="burmanRadio__input" id="valley">
+                      <label for="valley" class="burmanRadio__label">Valley Only</label>
+                    </div>
+
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input (click)="protection('3')" [(ngModel)]="senData.area" name="area" type="radio" value="3"
+                        class="burmanRadio__input" id="guttervalley">
+                      <label for="guttervalley" class="burmanRadio__label"> Gutter + Valley</label>
+                    </div>
+                  </div>
+                  <!-- <div class="form-group radio_questions col-12 col-xl-4"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input (click)="protection('1')" [(ngModel)]="senData.area" name="area" type="radio" value="1"
+                          class="icheck required" />
+                        <div style="color:#184876;margin-left: 30px;">
+                          <p class="font-gray">Gutter Only
+                          </p>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-4"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input (click)="protection('2')" [(ngModel)]="senData.area" name="area" type="radio" value="2"
+                          class="icheck required" />
+                        <div style="color:#184876;margin-left: 30px;">
+                          <p class="font-gray">Valley Only</p>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-4"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input (click)="protection('3')" [(ngModel)]="senData.area" name="area" type="radio" value="3"
+                          class="icheck required" />
+                        <div style="color:#184876;margin-left: 30px;">
+                          <p class="font-gray">Gutter + Valley
+                          </p>
+                        </div>
+                      </label>
+                    </div> -->
+                  <div class="row">
+                    <div class="form-group radio_questions col-md-3 col-xl-3 p-3">
+                      <img src="assets/img/Corro-Gutter.jpg" class="img-fluid">
+                    </div>
+                    <div class="form-group radio_questions col-md-3 col-xl-3 p-3"
+                     >
+                      <img src="assets/img/Corro-Aluminium.jpg" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="protectionGutter" class="form-group">
+                  <label>Enter the size of Gutter(Meter in multiple of 5)</label>
+                  <input [(ngModel)]="senData.gutterSize" name="gutterSize" type="number" class="form-control col-4 col-xl-4">
+                </div>
+                <div *ngIf="protectionValley" class="form-group">
+                  <label>Enter the size of Valley(Meter in multiple of 5 )</label>
+                  <input [(ngModel)]="senData.valleySize" name="valleySize" type="number" class="form-control col-4 col-xl-4">
+                </div>
+
+
+              </div>
+
+
+            </div>
+            <!-- /middle-wizard -->
+            <div id="bottom-wizard" style="text-align:left; padding-left: 50px;">
+              <button type="button" (click)="prevFirstPage()" name="backward" class="backward">Previous </button>
+              <button type="button" (click)="sumbitSecondPage1()" name="forward" class="forward">Next</button>
+            </div>
+
+          </div>
+          <!-- /Wizard container -->
+
+        </div>
+        <!-- /col -->
+      </div>
+    </div>
+    <!-- 22 -->
+    <div *ngIf="secondPage2" class="container-fluid tab-pane">
+      <div class="row">
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #ec8f21;; padding: 15px 75px;">
+          <h3 style="font-size:32px;" class="main_question">Online Quote Form</h3>
+        </div>
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #f8f8f8; padding: 15px 75px;">
+
+          <div id="wizard_container">
+            <input id="website" name="website" type="text" value="" />
+            <div id="middle-wizard">
+
+              <div class="step">
+
+                <h3 class="main_question">Colour Selection</h3>
+
+                <div class="container" style="padding-left:0px;">
+                  <div id="palette" class="block">
+                    <div id="colormesh-palette">
+                      <div class="container">
+                        <label>What colour is required for Mesh?</label>
+                        <div class="row colorcontainer align-items-center">
+                          <label style="float:left;">Selected Color </label>
+
+                          <div class="paletteselect" [ngStyle]="{'background-color': senData.meshColorCode}">
+                            <label style="margin:0px 10px;">{{senData.meshColor}}</label>
+                            <ul class="list">
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="palette">
+                          <ul class="list">
+                            <li (click)="onClick(item)" *ngFor="let item of typeOneColor"
+                              [ngStyle]="{'background-color': item.code}">{{item.name}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container" style="padding-left:0px;">
+                  <div id="palette1" class="block">
+                    <div id="colortrim-palette">
+                      <div class="container">
+                        <label>What colour is required for Trim?</label>
+                        <div class="row colorcontainer align-items-center">
+                          <label style="float:left;">Selected Color </label>
+                          <div class="paletteselect" [ngStyle]="{'background-color': senData.trimColorCode}">
+                            <label style="margin:0px 10px;">{{senData.trimColor}}</label>
+                            <ul class="list">
+                            </ul>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="palette">
+                          <ul class="list">
+                            <li (click)="onClick1(item)" *ngFor="let item of typeOneColor"
+                              [ngStyle]="{'background-color': item.code}">{{item.name}}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Colour selection is mandatory, <a href="#Mymodelcolor" role="button" data-toggle="modal">click
+                      here</a>
+                    to see alternate colours</label>
+                </div>
+              </div>
+            </div>
+            <div id="bottom-wizard" style="text-align:left; padding-left: 50px;">
+              <button type="button" (click)="sumbitFirstPage()" name="backward" class="backward">Previous </button>
+              <button type="button" (click)="sumbitSecondPage2()" name="forward" class="forward">Next</button>
+            </div>
+          </div>
+        </div>
+        <!-- /col -->
+      </div>
+    </div>
+    <!-- 23 -->
+    <div *ngIf="secondPage3" class="container-fluid tab-pane">
+      <div class="row">
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: #ec8f21;; padding: 15px 75px;">
+          <h3 style="font-size:32px;" class="main_question">Online Quote Form</h3>
+        </div>
+        <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+          style="background-color: white; padding: 15px 75px;">
+
+          <div id="wizard_container_radio">
+            <input id="website" name="website" type="text" value="" />
+            <div id="middle-wizard">
+              <div class="step">
+                <div *ngIf="isAccessoriesOptions">
+                  <label style="color:green;font-size:25px;"> Thank you, your DIY Kit is now complete.</label><br>
+                  <label>Do you need any extra Mesh or Accessories?</label>
+                  <div class="row">
+
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input (click)="isAccessories(2)" [(ngModel)]="senData.isAccessories" name="isAccessories"
+                        type="radio" value="2" class="burmanRadio__input" id="no">
+                      <label for="no" class="burmanRadio__label">No </label>
+                    </div>
+                    <div class="burmanRadio form-group col-12 col-xl-4">
+                      <input (click)="isAccessories(1)" [(ngModel)]="senData.isAccessories" name="isAccessories"
+                        type="radio" value="1" class="burmanRadio__input" id="yes">
+                      <label for="yes" class="burmanRadio__label">Yes</label>
+                    </div>
+                    <!-- <div class="form-group radio_questions col-12 col-xl-4" style="padding-left:0px; padding-right:0px;">
+                    <label class="newlogo">
+                      <input (click) = "isAccessories(1)" [(ngModel)]="senData.isAccessories" name="isAccessories" type="radio" value="1"
+                        class="icheck required" />
+                      <div style="color:#184876;margin-left: 30px;">
+                        <p class="font-gray">Yes </p>
+
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-group radio_questions col-12 col-xl-4" style="padding-left:0px; padding-right:0px;">
+                    <label class="newlogo">
+                      <input  (click) = "isAccessories(2)" [(ngModel)]="senData.isAccessories" name="isAccessories" type="radio" value="2"
+                        class="icheck required" />
+                      <div style="color:#184876;margin-left: 30px;">
+                        <p class="font-gray">No </p>
+                      </div>
+                    </label>
+                  </div> -->
+                  </div>
+                </div>
+                <div *ngIf="isAccessoriesArea">
+                  <label>Order Parts and Accessories</label>
+                  <div class="row">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <h2> Product: </h2>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <h2> Width: </h2>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <h2> Quantity: </h2> <br>
+                        * Mesh minimum 10 m
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <h2>Select Color: </h2>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;">
+                          <img style="height: 45px !important;" src="assets/img/AlMesh.png" class="img-fluid">
+                          <p class="font-gray-label">(Aluminium 3.5mm Mesh) Best for Bushfire Areas
+                          </p>
+                        </div>
+                        <div class="mt-4" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/15years.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.aluWidth" name="aluWidth">
+                            <option value="">Select width</option>
+                            <option value="250">250 mm</option>
+                            <option value="500">500 mm</option>
+                            <option value="750">750 mm</option>
+                            <option value="1000">1000 mm</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input [(ngModel)]="senData.aluQuantity" name="aluQuantity" type="text" class="form-control select"
+                          placeholder="Enter the quantity">
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.aluColor" name="aluColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;">
+                          <img src="assets/img/ember-mesh.png" class="img-fluid">
+                          <p class="font-gray-label">(Aluminium 2.0mm Mesh) Best for Bushfire Areas
+                          </p>
+                        </div>
+
+                        <div class="mt-4" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/15years.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.emberWidth" name="emberWidth">
+                            <option value="">Select width</option>
+                            <option value="250">250 mm</option>
+                            <option value="500">500 mm</option>
+                            <option value="750">750 mm</option>
+                            <option value="1000">1000 mm</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input [(ngModel)]="senData.emberQuantity" name="emberQuantity" type="text"
+                          placeholder="Enter the quantity" class="form-control select">
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.emberColor" name="emberColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;">
+                          <img src="assets/img/plas-mesh.png" class="img-fluid">
+                          <p class="font-gray-label">(HDPE Plastic 4.0mm Mesh)
+                          </p>
+                        </div>
+
+                        <div class="mt-4" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/15years.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.plasWidth" name="plasWidth">
+                            <option value="">Select width</option>
+                            <option value="250">250 mm</option>
+                            <option value="500">500 mm</option>
+                            <option value="750">750 mm</option>
+                            <option value="1000">1000 mm</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input [(ngModel)]="senData.plasQuantity" name="plasQuantity" type="text"
+                          placeholder="Enter the quantity" class="form-control select">
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.plasColor" name="aluColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;">
+                          <img src="assets/img/colorbond.jpg" class="img-fluid">
+                        </div>
+
+                        <div class="" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/trims.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input [(ngModel)]="senData.accTrimQuantity" name="accTrimQuantity" type="text"
+                          placeholder="Enter the quantity" class="form-control select">
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.accTrimColor" name="accTrimColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;">
+                          <img src="assets/img/colorbond.jpg" class="img-fluid">
+                        </div>
+
+                        <div class="" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/saddles.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.accSaddlesType" name="accSaddlesType">
+                            <option value="">Select the type of saddles</option>
+                            <option value="1">Corrodek saddle</option>
+                            <option value="2">Trimdek saddle</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input [(ngModel)]="senData.accSaddlesQuantity" name="accSaddlesQuantity" type="text"
+                          placeholder="Enter the quantity" class="form-control select">
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.accSaddlesColor" name="accSaddlesColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="row align-items-center">
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <div id="banner" style="overflow: hidden; display: flex; justify-content:space-around;">
+                        <div class="" style="max-width: 70%; max-height: 20%;visibility:hidden;">
+                          <img src="assets/img/colorbond.jpg" class="img-fluid">
+                        </div>
+
+                        <div class="" style="max-width: 100%; max-height: 100%;">
+                          <img src="assets/img/screws.png" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" (change)="onChange($event.target.value)" id="slct"
+                            [(ngModel)]="senData.accScrewType" name="accScrewType">
+                            <option value="">Select the type of Screw</option>
+                            <option value="1">Painted</option>
+                            <option value="2">Unpaninted</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <input type="text" placeholder="Enter the quantity" [(ngModel)]="senData.accScrewQuantity"
+                          name="accScrewQuantity" class="form-control select">
+                      </label>
+                    </div>
+                    <div *ngIf="accScrewColor" class="form-group radio_questions col-12 col-xl-3"
+                      style="padding-left:0px; padding-right:0px;">
+                      <label class="newlogo">
+                        <div class="select">
+                          <select name="slct" id="slct" [(ngModel)]="senData.accScrewColor" name="accScrewColor">
+                            <option value="">Select color</option>
+                            <option *ngFor="let item of typeOneColor" [ngStyle]="{'background': item.code}"
+                              [ngValue]="item.name">{{item.name}}</option>
+                          </select>
+                        </div>
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!-- /step 1-->
+            </div>
+            <!-- /middle-wizard -->
+            <div id="bottom-wizard" style="text-align:left; padding-left: 50px;">
+              <button *ngIf="isAccessoriesOptions == true" type="button" (click)="sumbitSecondPage1()" name="backward"
+                class="backward">Previous </button>
+              <button *ngIf="isAccessoriesOptions == false" type="button" (click)="sumbitFirstPage()" name="backward"
+                class="backward">Previous </button>
+              <button type="button" (click)="sumbitSecondPage3()" name="forward" class="forward">Next</button>
+            </div>
+
+          </div>
+          <!-- /Wizard container -->
+
+        </div>
+        <!-- /col -->
+      </div>
+    </div>
+  </form><br><br>
+</div>
+
+
+<!-- third page -->
+<div style="margin-top:200px;" *ngIf="thirdPage">
+  <div class="container-fluid mr-auto bg-gray">
+    <div class="container m-auto">
+      <img src="/assets/img/step2.png" alt="step1" class="img-fluid bg-class">
+    </div>
+  </div>
+  
+  <div class="container-fluid tab-pane">
+    <div class="row">
+      <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+        style="background-color: #ec8f21;; padding: 15px 75px;">
+        <h3 style="font-size:32px;" class="main_question">Save & Review Quote</h3>
+      </div>
+      <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+        style="background-color: #e2e0e0; padding: 15px 75px;">
+        <h3 style="font-size:24px !important;" class="main_question"><b>AUSTRALIA WIDE FREE SHIPPING FOR ORDERS OVER
+            $250</b></h3>
+      </div>
+
+      <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+        style="background-color: #f8f8f8; padding: 15px 75px;">
+
+        <div id="wizard_container">
+          <input id="website" name="website" type="text" value="" />
+          <div id="middle-wizard">
+            <div class="submit step">
+              <div class="form-row">
+                <div class="col-4">
+                  <img src="assets/img/email_logo.jpg" alt="Logo" class="img-fluid logo">
+                </div>
+              </div><br>
+              <!-- <div class="form-row">
+                <div class="col-2">
+                  <label class="primary" style="font-weight:bold;">Quotation No:</label>
+                </div>
+                <div class="col-3">
+                  <label style="font-weight:bold;">Quo1234</label>
+
+                </div>
+              </div> -->
+              <div class="form-row">
+                <div class="col-2">
+                  <label class="primary" style="font-weight:bold;">Name:</label>
+                </div>
+                <div class="col-3">
+                  <label style="font-weight:bold;padding-left: 20px;">{{senData.name}}</label>
+
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-2">
+                  <label class="primary" style="font-weight:bold;">Phone:</label>
+                </div>
+                <div class="col-3">
+                  <label style="font-weight:bold;padding-left: 20px;">{{senData.phone}}</label>
+
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-2">
+                  <label class="primary" style="font-weight:bold;">Email:</label>
+                </div>
+                <div class="col-3">
+                  <label style="font-weight:bold;padding-left: 20px;">{{senData.email}}</label>
+
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-2">
+                  <label class="primary" style="font-weight:bold;">Delivery Address:</label>
+                </div>
+                <div class="col-3">
+                  <label
+                    style="font-weight:bold;padding-left: 20px;">{{senData.street}},{{senData.suburb}},{{senData.state}},{{senData.postalCode}}</label>
+
+                </div>
+              </div>
+              <br />
+              <div class="row align-items-center">
+                <div class="col-sm-4 col-lg-4" style="background-color: transparent;">
+                  <label style="font-weight:bold;">Enter Promo Code
+                  </label>
+
+                </div>
+                <div class="col-sm-4 col-lg-4" style="background-color: transparent;">
+                  <input type="text" class="form-control" [(ngModel)]="code" name="code" placeholder="Enter PromoCode"
+                    [readonly]="promoinput"><br>
+
+
+                </div>
+                <div class="col-sm-2 col-lg-2" style="background-color: transparent;    margin-bottom: 20px;">
+                  <div *ngIf="applied">
+                    <button class="btn btn-primary backward-apply" (click)="applyPromo()" type="submit">
+                      <i class="fas fa-check"></i> Apply </button></div>
+                  <div *ngIf="removed">
+                    <button class="btn btn-primary backward-remove" (click)="removePromo()" type="submit">
+                      <i class="fas fa-close"></i> Remove </button>
+                  </div>
+                </div>
+
+              </div>
+              <div class="container-fluid tab-pane">
+                <div class="row">
+                  <div class="col-sm-10 col-lg-10" id="MainPanel" style="background-color: #184876;  padding: 10px;">
+                    <h5 style="color:white;" class="main_question">Description</h5>
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #184876; padding: 10px;border-left: 1px solid #edeff0;">
+                    <h5 style="color:white;" class="main_question">Total</h5>
+                  </div>
+                </div>
+                <div class="row">
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;padding:10px 15px 0px;border-left: 1px solid #a4a7a9;">
+                    <label style="font-weight:bold;">DIY KIT</label>
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">${{calculatedValue.kitTotalPrice}}</span>
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label *ngIf="this.senData.product == '1'">(Custom orb</label>
+                    <label *ngIf="this.senData.product == '2'"> (Tile</label>
+                    <label *ngIf="this.senData.product == '3'"> (Trimdek</label>
+                    <label *ngIf="this.senData.product == '4'">(Klip-Lok</label>
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label *ngIf="this.senData.subproduct == '1'">Aluminium 3.5mm Mesh</label>
+                    <label *ngIf="this.senData.subproduct == '2'">Aluminium 2.0mm Mesh</label>
+                    <label *ngIf="this.senData.subproduct == '3'"> HDPE Plastic 4.0mm Mesh</label>
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label *ngIf="this.senData.area == '1'">Gutter:<span
+                        class="answer-label">{{this.senData.gutterSize}} Meter</span></label>
+                    <label *ngIf="this.senData.area == '2'">Valley:<span
+                        class="answer-label">{{this.senData.valleySize}} Meter</span></label>
+                    <label *ngIf="this.senData.area == '3'"> Gutter:<span
+                        class="answer-label">{{this.senData.gutterSize}} Meter</span> </label>
+                    <br>
+                    <label *ngIf="this.senData.area == '3'"> Valley:<span
+                        class="answer-label">{{this.senData.valleySize}} Meter</span> </label>
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label>Mesh Colour:
+                      <span class="answer-label"> {{this.senData.meshColor}}</span>
+                    </label>
+
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;border-left: 1px solid #a4a7a9;">
+                  </div>
+                  <div *ngIf="isAccessoriesOptions == true" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label> Trim Colour:
+                      <span class="answer-label">{{this.senData.trimColor}} )</span>
+                    </label>
+                  </div>
+
+
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                  </div>
+
+                  <div *ngIf="calculatedValue.isInstallation" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label style="font-weight:bold;">Installation</label>
+                  </div>
+                  <div *ngIf="calculatedValue.isInstallation" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">${{calculatedValue.instalationCost}}</span>
+                  </div>
+
+
+                  <div *ngIf="senData.isAccessories == '1'" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label style="font-weight:bold;">Accessories</label>
+                  </div>
+                  <div *ngIf="senData.isAccessories == '1'" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">${{calculatedValue.accessories}}</span>
+                  </div>
+                  <div *ngIf="senData.isAccessories == '1'" class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: #ebebeb;border-left: 1px solid #a4a7a9;">
+                    <label *ngIf="this.senData.aluWidth" style="font-weight:bold;">Aluminium 3.5mm Mesh:<span
+                        class="answer-label">{{this.senData.aluWidth}} Width ,{{this.senData.aluQuantity}} Qty,
+                        {{this.senData.aluColor}} Color, </span></label>
+                    <label *ngIf="this.senData.emberWidth" style="font-weight:bold;">Aluminium 2.0mm Mesh:<span
+                        class="answer-label">{{this.senData.emberWidth}} Width ,{{this.senData.emberQuantity}} Qty,
+                        {{this.senData.emberColor}} Color, </span></label>
+                    <label *ngIf="this.senData.plasWidth" style="font-weight:bold;">HDPE Plastic 4.0mm Mesh:<span
+                        class="answer-label">{{this.senData.plasWidth}} Width ,{{this.senData.plasQuantity}} Qty,
+                        {{this.senData.plasColor}} Color, </span></label>
+                    <label *ngIf="this.senData.accTrimQuantity" style="font-weight:bold;">Trims:<span
+                        class="answer-label">{{this.senData.accTrimQuantity}} Qty, {{this.senData.accTrimColor}} Color,
+                      </span></label>
+                    <label *ngIf="this.senData.accSaddlesQuantity" style="font-weight:bold;">Saddles:<span
+                        class="answer-label"><span *ngIf="this.senData.accSaddlesType == '1'">Corrodek
+                          Saddles,</span><span *ngIf="this.senData.accSaddlesType == '2'">Trimdek
+                          Saddles,</span>{{this.senData.accSaddlesQuantity}} Qty, {{this.senData.accSaddlesColor}}
+                        Color, </span></label>
+                    <label *ngIf="this.senData.accScrewQuantity" style="font-weight:bold;">Screws:<span
+                        class="answer-label"><span *ngIf="this.senData.accScrewType == '1'">Painted screws,</span><span
+                          *ngIf="this.senData.accScrewType == '2'">Unpainted
+                          screws,</span>{{this.senData.accScrewQuantity}} Qty,<span
+                          *ngIf="this.senData.accScrewType == '1'">{{this.senData.accScrewColor}}
+                          Color</span></span></label>
+                  </div>
+                  <div *ngIf="senData.isAccessories == '1'" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-left: 1px solid #a4a7a9;border-right: 1px solid #a4a7a9;">
+                  </div>
+                </div>
+
+                <div *ngIf="removed" class="row">
+                  <div class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: transparent;padding:10px 15px 0px;border: 1px solid #a4a7a9;border-right: none;">
+                    <label style="font-weight:bold;">Sub total
+                    </label>
+
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: transparent; padding: 10px; border: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">${{calculatedValue.oldtotal}}</span>
+                  </div>
+                </div>
+
+
+                <div *ngIf="applied" class="row">
+                  <div class="col-sm-10 col-lg-10" id="MainPanel"
+                    style="background-color: transparent;padding:10px 15px 0px;border: 1px solid #a4a7a9;border-right: none;">
+                    <label style="font-weight:bold;">Sub total
+                    </label>
+
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: transparent; padding: 10px; border: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">${{calculatedValue.total}}</span>
+                  </div>
+                </div>
+
+
+
+                <div class="row">
+                  <div *ngIf="removed" class="col-sm-7 col-lg-7" id="MainPanel"
+                    style="background-color: #ebebeb;border-bottom: 1px solid #a4a7a9;">
+                  </div>
+                  <div *ngIf="removed" class="col-sm-3 col-lg-3  text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">Promo Code offer</span>
+                  </div>
+                  <div *ngIf="removed" class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">$ -{{offerAmount}}</span>
+                  </div>
+                  <div class="col-sm-7 col-lg-7" id="MainPanel"
+                    style="background-color: #ebebeb;border-bottom: 1px solid #a4a7a9;">
+                  </div>
+                  <div class="col-sm-3 col-lg-3  text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">Delivery charges</span>
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">$ {{calculatedValue.deliveryCharge}}</span>
+                  </div>
+                  <div class="col-sm-7 col-lg-7" id="MainPanel"
+                    style="background-color: #ebebeb;border-bottom: 1px solid #a4a7a9;">
+                  </div>
+                  <div class="col-sm-3 col-lg-3  text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label"> GST</span>
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">$ {{calculatedValue.gstTotal}}</span>
+                  </div>
+                  <div  *ngIf = "isIndtallerDiscount" class="col-sm-7 col-lg-7" id="MainPanel"
+                  style="background-color: #ebebeb;border-bottom: 1px solid #a4a7a9;">
+                </div>
+                  <div  *ngIf = "isIndtallerDiscount" class="col-sm-3 col-lg-3  text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label"> Installer Discount</span>
+                  </div>
+                  <div *ngIf = "isIndtallerDiscount"  class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;border-bottom: 1px solid #a4a7a9;">
+                    <span class="main_question answer-label">$ {{calculatedValue.installerDiscount}}</span>
+                  </div>
+                  <div class="col-sm-7 col-lg-7" id="MainPanel" style="background-color: #ebebeb;">
+                  </div>
+                  <div class="col-sm-3 col-lg-3  text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;">
+                    <span class="main_question answer-label"> Total</span>
+                  </div>
+                  <div class="col-sm-2 col-lg-2 text-right" id="MainPanel"
+                    style="background-color: #ebebeb; padding: 10px;">
+                    <span class="main_question answer-label">$ {{calculatedValue.fullTotal}}</span>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div id="bottom-wizard" style="text-align:left;">
+                    <button type="button" (click)="quotePrevious()" name="backward" class="backward">Previous </button>
+                    <button type="button" (click)="sendMail('2')" name="backward" class="backward-save">SAVE & EMAIL ME
+                      QUOTE</button>
+                  </div>
+
+                </div>
+                <div class="container-fluid tab-pane">
+                  <div class="row align-items-center">
+                    <div class="col-sm-6 col-lg-6" id="MainPanel" style="background-color: #ec8f21;padding: 22px 75px;">
+                      <h3 style="font-size:32px;" class="main_question">PayNow By CreditCard</h3>
+                    </div>
+                    <div class="col-sm-6 col-lg-6" id="MainPanel" style="background-color: #ec8f21;padding: 16px 75px;">
+                      <img src="assets/img/stripelogo.png" class="img-fluid" alt="" />
+                    </div>
+                    <h5>50% percentage amount required to confirm the order</h5>
+                    <div class="col-sm-12 col-lg-12 mb-3 mt-3" >
+                    <!-- <input type="text" class="form-control"  [(ngModel)]="payableamount" name="payableamount"  name="code"  placeholder="Enter Payable Amount"> -->
+                   <input type="radio" [(ngModel)]="payableamountPercent" name="payableamountPercent" value="50" (change)="handleChange($event.target.value)"> Pay 50% now
+                   <input type="radio" [(ngModel)]="payableamountPercent" name="payableamountPercent" value="100" (change)="handleChange($event.target.value)"> Pay 100% now
+
+                  </div>
+
+                    <div class="col-sm-12 col-lg-12 offset-sm-0 offset-lg-0" id="MainPanel"
+                      style="background-color: #e2e0e0; padding: 15px 75px;">
+                      <h3 style="font-size:24px !important;" class="main_question"><b>Please Enter Your Card Details</b>
+                      </h3>
+                    </div>
+                    <!-- <form novalidate (ngSubmit)="buy()" [formGroup]="stripeTest">
+                      <input type="text" class="form-control" formControlName="name" placeholder="Jane Doe">
+                      <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+                      <button class="backward-save" type="submit">
+                        Pay ${{calculatedValue.fullTotal}}
+                      </button>
+                    </form> -->
+                  </div>
+                </div>
+                <br>
+                <input type="text" class="form-control" [(ngModel)]="cardname" placeholder="Card Holder Name"
+                  name="cardname"><br>
+                <ngx-stripe-card [ngClass]="card" [options]="cardOptions" [elementsOptions]="elementsOptions">
+                </ngx-stripe-card>
+                <button *ngIf="pay" class="btn btn-primary backward-save" (click)="buy()"> Pay $
+                  {{payableamount}}</button>
+                <button *ngIf="processing" class="btn backward-save1" > Pay $
+                  {{payableamount}}</button>
+                  <!-- <button *ngIf="pay" class="btn btn-primary backward-save" (click)="buy()"> Pay</button>
+                  <button *ngIf="processing" class="btn backward-save1" > Pay</button> -->
+              </div><br>
+
+              <div class="col-sm-12 col-lg-12 offset-sm-0 offset-lg-0" id="MainPanel"
+                style="padding: 15px 75px;text-align: right;">
+                <img src="assets/img/stripe.png" class="img-fluid" alt="" />
+              </div>
+
+            </div>
+            <!-- /step 1-->
+          </div>
+        </div>
+        <!-- /Wizard container -->
+
+      </div>
+      <!-- /col -->
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg show" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Gutter Mesh Details</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="dynamic-content">
+        <img src="assets/img/Screendetails.png" class="img-fluid" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg show" id="Mymodelcolor" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Colors Available</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="dynamic-content">
+        <img src="/assets/img/alternate-colours.jpg" class="img-fluid" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

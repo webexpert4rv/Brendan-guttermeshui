@@ -1,0 +1,47 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
+.active{
+    color:orange !important;
+}
+@media(max-width:762px) {
+    #distributor .row .col {
+        padding:40px 20px !important;
+    }
+}
+@media(max-width:991px){
+    #social .row.logos{
+        display:none;
+    }
+    #social .mobile{
+        display:block !important;
+        padding:20px 0px;
+    }
+    #social .mobile svg{
+        height:80px;
+        width:80px;
+    }
+}
+@media(max-width:1288px){
+    #social .row.logos a.social-button{
+        font-size:30px !important;
+        padding:10px !important;
+    }
+}
+.btn-order{
+    background-color: #f8931d;
+    border-color: #f8931d;
+    color: white !important;
+    max-width:150px;
+    margin:auto;
+}
+.btn-order:hover{
+    background-color: #f8931d;
+    border-color: #f8931d;
+    color: black !important;
+}
+body {
+    background: #184876;
+}

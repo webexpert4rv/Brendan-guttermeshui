@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div style="margin-top:200px;">
+    <div class="col-sm-10 col-lg-10 offset-sm-1 offset-lg-1" id="MainPanel"
+        style="background-color: #f8f8f8; padding: 15px 35px;">
+<!-- <div class="container-fluid tab-pane"> -->
+    <div class="container-fluid tab-pane">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-lg-12 " id="MainPanel"
+            style="background-color: #ec8f21;; padding: 15px 35px;">
+            <h3 style="font-size:32px;" class="main_question"><b>PayNow By CreditCard</b></h3>
+          </div>
+      </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-sm-6 col-lg-6" id="MainPanel">
+            <label class="main_question"><b>Name:</b> {{senData.name}}</label>
+          </div>
+          <div class="col-sm-6 col-lg-6" id="MainPanel">
+              <label class="main_question"><b>Phone Number:</b> {{senData.phone}}</label>
+            </div>
+            <div class="col-sm-6 col-lg-6" id="MainPanel">
+                <label class="main_question"><b>Email:</b> {{senData.email}}</label>
+              </div>
+              <div class="col-sm-6 col-lg-6" id="MainPanel">
+                  <label class="main_question"><b>Street Name:</b> {{senData.street}}</label>
+                </div>
+                <div class="col-sm-6 col-lg-6" id="MainPanel">
+                    <label class="main_question"><b>Suburb:</b> {{senData.suburb}}</label>
+                  </div>
+                  <div class="col-sm-6 col-lg-6" id="MainPanel">
+                      <label class="main_question"><b>State:</b> {{senData.state}}</label>
+                    </div>
+                  <div class="col-sm-6 col-lg-6" id="MainPanel">
+                      <label class="main_question"><b>Postal Code:</b> {{senData.postalCode}}</label>
+                    </div>
+      </div>
+      
+      <div class="row align-items-center">
+          
+          <div class="col-sm-12 col-lg-12" id="MainPanel"
+            style="background-color: #e2e0e0; padding: 15px 35px;">
+            <h3 style="font-size:24px !important;" class="main_question"><b>Please Enter Your Card Details</b></h3>
+          </div>
+
+      </div>
+    <!-- </div> -->
+    <br>
+    <input type="text" class="form-control" [(ngModel)]="cardname" placeholder="Card Holder Name" name="cardname"><br>
+    <ngx-stripe-card [ngClass]="card" [options]="cardOptions" [elementsOptions]="elementsOptions">
+    </ngx-stripe-card>
+    <!-- <button *ngIf="pay" class="btn btn-primary backward-save" (click)="buy()"> Pay $
+      {{calculatedValue.fullTotal}}</button> -->
+      <button *ngIf="pay" class="btn btn-primary backward-save"> Pay </button>
+    <!-- <button *ngIf="processing" class="btn backward-save1"> Pay $ {{calculatedValue.fullTotal - calculatedValue.instalationCost}}</button> -->
+    <button *ngIf="processing" class="btn backward-save1"> Pay</button>
+
+  </div>
+  <br>
+
+  <div class="col-sm-12 col-lg-12 offset-sm-0 offset-lg-0" id="MainPanel"
+    style="padding: 15px 75px;text-align: right;">
+    <img src="assets/img/stripe.png" class="img-fluid" alt="" />
+  </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
