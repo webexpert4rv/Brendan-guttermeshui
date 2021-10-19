@@ -9,8 +9,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 export class AppService {
 // baseurl = "http://18.225.25.41:4001"
 //  baseurl = "http://localhost:4001"
-
-baseurl = "https://quote.guttermeshdirect.com.au:3100"
+   baseurl = "http://3.104.225.199:4002/api"
+   
+  //baseurl = "https://quote.guttermeshdirect.com.au:3100"
+  
   constructor(private http: HttpClient) {
   }
   async postService(url, data) {
